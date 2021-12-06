@@ -136,13 +136,27 @@ Você pode colocar objetos dentro de grupos e usar position, rotation e scale no
  - mova o objeto mais um pouco
  - tire outra foto
  - adinfinitum
+### A maioria das telas funcionam a 60 frames por segundo, mas nem sempre a sua animação vai ser assim indepentente do framerate
+
+### É preciso atualizar os objetos e renderizar em cada frame.
+### Da pra fazer isso em uma função com **window.requestAnimationFrame(...)**
 
 
+## REQUESTANIMATIONFRAME
 
+### O propósito dessa função é chamar a função dada ao próximo frame
+### vamos chamar a mesma função em cada frame
 
+[code]
+const tick = () =>
+{
+    console.log('tick');
 
+    window.requestAnimationFrame(tick)
+}
 
-
+tick()
+[/code]
 
 
 
