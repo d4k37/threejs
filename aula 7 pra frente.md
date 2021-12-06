@@ -73,3 +73,48 @@ window.addEventListener('mousemove', (event)=>
     console.log(cursor.y);
 })
 ```
+
+## Agora é só atualizar o **position** da camera na função **tick** com as coordenadas do cursor
+## O axis **y** precisa ser negativo porque o **cursor.y** é positivo quando indo pra baixo enquanto o **y** do Three.js é positivo quando indo pra cima
+## Pra mover a camera ao redor do centro da cena use 
+ - Math.sin()
+ - Math.cos()
+ - Math.PI
+ 
+ 
+ 
+ 
+ # Controls
+ ## DeviceOrientationControls
+  - Vai automaticamente pegar a orientação do seu dispositivo se ele, OS e navegador permitem e girar a camera de acordo
+  - É útil pra criar universos imersivos e experiencias em VR
+  
+  ## FlyControls
+   - Habilita o movimento da camera como se você estivesse em uma nave
+   - Você pode rodar os 3 axis, ir pra frente e pra trás
+   
+   
+   ## FirstPersonControls
+   - É como o FlyControls, mas com um axis fixado, não é como jogos de FPS
+   - É mais como um pássaro ou avião que não pode tombar
+   
+   
+   ## PointerLockControls
+   - Esse sim parece fps
+   - Usa o a API pointer lock JavasCript
+   - É difícil de usar e quase só usa o pointer lock e camera rotation
+   
+   ## OrbitControls
+   - Da pra fazer os movimentos de um mapa, por exemplo, é mais sobre movimento de câmera
+   
+   ## TrackballControlls
+   - É como **OrbitControls** sem o limite de ângulo vertical
+
+   ## TransformControls
+   - Não tem nada a ver com camera
+   - É mais pra mover objetos
+   
+   ## DragControls
+   - É pra mover objetos também
+   
+   
