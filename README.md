@@ -194,6 +194,21 @@ tick()
 
 ```
 
+# Clock
+## Threejs tem uma função pra resolver isso chamada CLock
+
+```
+ mesh.position.y = Math.sin(elapsedTime)
+ ```
+ - o cubo sobe e desce porque o sin faz isso
+
+
+
+# Usar uma biblioteca
+## se você quetr ter mais controle, criar tweens criar timelines, você pode usar uma biblioteca como **GSAP**
+
+# EXISTEM várias formas de fazer a mesma coisa
+
 
 
 
