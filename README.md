@@ -17,7 +17,7 @@ a CPU calcula bem rápido também mas é um cálculo por vez
 a GPU é um pouco mais lenta mas faz milhares de cálculos paralelos
 
 
-Lesson 03 -- creating basic scene
+##Lesson 03 -- creating basic scene
  Precisamos de 3 elementos pra começar:
  ºuma cena que contém os objetos
  ºos objetos
