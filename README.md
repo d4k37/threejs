@@ -148,6 +148,7 @@ Você pode colocar objetos dentro de grupos e usar position, rotation e scale no
 ### vamos chamar a mesma função em cada frame
 
 [code]
+
 const tick = () =>
 {
     console.log('tick');
@@ -156,6 +157,7 @@ const tick = () =>
 }
 
 tick()
+
 [/code]
 
 
