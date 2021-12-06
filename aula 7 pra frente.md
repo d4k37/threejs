@@ -36,5 +36,16 @@
 
  - Field of view (vertical vision angle, in degrees, também chamado de **fov**) Recomendado entre 45 e 75
  - Aspect Ratio (o width do render dividido pelo height do render, o **Delta**)
- - Near and Far (qualquer objeto ou parte dele mais perto que **near** ou mais longe que **far** não vai aparecer
- - 
+ - Near and Far (qualquer objeto ou parte dele mais perto que **near** ou mais longe que **far** não vai aparecer)
+ 
+ # Orthographic Camera
+ ### Properties
+ 
+  - A diferença pra PerspectiveCamera é a falta de perspectiva
+  - Ao invés de field of view, ela provê o quão longe a camera pode ser vista em cada direção(**left, right, top, e bottom**)
+  - E **near** e **far**
+  
+  
+  # Mover a camera com o mouse
+  ## Primeiro precisamos saber as coordenadas do mouse no canvas
+   - use o evento **mousemove** com **addEventListener** e pegue o **event.clientX** e o **event.clientY**
