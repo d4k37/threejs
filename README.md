@@ -24,6 +24,8 @@ a GPU é um pouco mais lenta mas faz milhares de cálculos paralelos
  #### OS OBJETOS
  
  Criar um objeto é criar um 'mesh'
+ É preciso criar o material 'MeshBasicMaterial
+ Seria mostrar a cor
  
  º geometrias primitivas
  
@@ -34,6 +36,36 @@ a GPU é um pouco mais lenta mas faz milhares de cálculos paralelos
  ºluzes etc
  
 #### UMA CÂMERA
+
+não é visível
+
+serve como um ponto de vista quando renderizar
+
+pode ter várias e trocar entre elas
+
+um exemplo é PerspectiveCamera
+
+a perspective camera tem uns parametros
+
+ºcampo de visao
+ºem graus
+ºtambémn é chamado de 'fov'
+
+O ASPECT RATIO
+
+Ele é o width dividido pelo height
+
+Crie uma varfiavel SIZES tendo valores temporarios
+
  
 #### UM RENDERIZADOR
+ 
+ Renderizar uma cena de uma câmera
+ 
+ result draw into canvas?
+ 
+ canvas é um elemento html que vc pode desenhar coisas
+ 
+ WEBGLRENDEREE
+ 
  
