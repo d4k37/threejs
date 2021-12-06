@@ -20,6 +20,10 @@ a GPU é um pouco mais lenta mas faz milhares de cálculos paralelos
 ## Lesson 03 -- creating basic scene
  ### Precisamos de 3 elementos pra começar:
  Uma cena que contém os objetos.
+ 
  os objetos.
+ 
  uma câmera.
+ 
  um renderizador.
+ 
