@@ -79,3 +79,152 @@ Crie uma varfiavel SIZES tendo valores temporarios
 
 
 ## Lesson 04 - Webpack
+##LESSON4 
+Só ensinando a usar o webpack pra compilar
+
+##Lesson -5 Transformar objetos
+
+###Existem 4 propriedades pra transformar os objetos:
+
+Posição
+
+Scale
+
+Rotation
+
+Quaternion (é um tipo de rotação)
+
+###Todas as classes que vem do Object3D tem essas propriedades como PerspectiveCamera ou Mesh
+
+###Essas propriedades serão compilkadas em matrizes (matrices) você não precisa aprender matriz
+
+#POSITION
+Se usa axis (x, y, z)
+O axis de um objeto não está alinhado com a câmera
+
+###Position vem de Vector3 que tem vários métodos, como usar a posição no comprimento de um vetor
+
+#SCALE
+se usa axis também
+
+objeto.scale.set(1, 1, 1)
+
+
+#ROTATION
+você pode usar a propriedade ROTATION e QUATERNION, se você muda em um, ele automaticamente muda o outro
+
+objeto.rotation
+
+o y gira horizontal
+
+o z gira diagonal
+
+o x gira pra frente e pra trás
+
+QUando você usa as propriedades de rotação pra um fps,  por exemplo, é preciso mudar a ordem com que ele roda os objetos, pois mudando primeiro o x, quando mudar o y vai ser um efeito estranho, então você muda pra YXZ com reorder
+
+#mesh.rotation.reorder('YXZ')
+
+#O quaternion fixa isso
+QUaternion também expressa rotation, mas em uma forma mais matemática, não veremos isso agora
+
+
+#LOOKAT
+Instâncias do Object3D tem o método lookAt(...) onde seu -z vira pro objeto que você colocou
+camera.lookAt(objeto.position)
+
+#GROUP
+Você pode colocar objetos dentro de grupos e usar position, rotation e scale no grupo
+
+
+
+# Lesson 6 - Animations
+
+## Animar em Three.js é como fazer stop motion
+ - Mova o objeto
+ - tire uma foto
+ - mova o objeto mais um pouco
+ - tire outra foto
+ - adinfinitum
+### A maioria das telas funcionam a 60 frames por segundo, mas nem sempre a sua animação vai ser assim indepentente do framerate
+
+### É preciso atualizar os objetos e renderizar em cada frame.
+### Da pra fazer isso em uma função com **window.requestAnimationFrame(...)**
+
+
+## REQUESTANIMATIONFRAME
+
+### O propósito dessa função é chamar a função dada ao próximo frame
+### vamos chamar a mesma função em cada frame
+
+[code]
+
+const tick = () =>
+{
+    console.log('tick');
+
+    window.requestAnimationFrame(tick)
+}
+
+tick()
+
+[/code]
+
+### Infelizmente, quando maior o framerate, mais rápido é a rotação
+
+## Pra arrumar, precisamos saber quanto tempo se passou desde o último frame
+
+##use **Date.now()** pra pegar a atual tempoestampa
+
+## timestamp é quanto tempo se passou desde que inventaram o computador
+
+## Pra arrumar o framerate tem que pegar o tempo de agora, menos o tempo que passou e pegar a diferença, que será o **Delta**
+
+```
+const tick = () =>
+{
+    //Time
+    const currentTime = Date.now()
+    const deltaTime = currentTime - time
+    time = currentTime
+
+    //console.log(deltaTime);
+
+    //update objects
+    mesh.rotation.y += 0.001 * deltaTime
+
+
+    //render
+    renderer.render(scene, camera)
+
+    window.requestAnimationFrame(tick)
+}https://github.com/d4k37/threejs/blob/main/aula%207%20pra%20frente.md
+```
+
+# Clock
+## Threejs tem uma função pra resolver isso chamada CLock
+
+```
+ mesh.position.y = Math.sin(elapsedTime)
+ ```
+ - o cubo sobe e desce porque o sin faz isso
+
+
+
+# Usar uma biblioteca
+## se você quetr ter mais controle, criar tweens criar timelines, você pode usar uma biblioteca como **GSAP**
+
+# EXISTEM várias formas de fazer a mesma coisa
+
+
+
+
+
+
+
+
+
+
+
+
+
