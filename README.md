@@ -22,9 +22,15 @@ a GPU é um pouco mais lenta mas faz milhares de cálculos paralelos
  Uma cena que contém os objetos.
  
  os objetos.
+ 
+ Criar um objeto é criar um 'mesh'
+ 
  º geometrias primitivas
+ 
  ºmodelos prontos importados
+ 
  ºpartículas
+ 
  ºluzes etc
  
  uma câmera.
