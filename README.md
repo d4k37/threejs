@@ -160,11 +160,39 @@ tick()
 
 [/code]
 
+### Infelizmente, quando maior o framerate, mais rápido é a rotação
+
+## Pra arrumar, precisamos saber quanto tempo se passou desde o último frame
+
+##use **Date.now()** pra pegar a atual tempoestampa
+
+## timestamp é quanto tempo se passou desde que inventaram o computador
+
+## Pra arrumar o framerate tem que pegar o tempo de agora, menos o tempo que passou e pegar a diferença, que será o **Delta**
+
+```
+const tick = () =>
+{
+    //Time
+    const currentTime = Date.now()
+    const deltaTime = currentTime - time
+    time = currentTime
+
+    //console.log(deltaTime);
+
+    //update objects
+    mesh.rotation.y += 0.001 * deltaTime
 
 
+    //render
+    renderer.render(scene, camera)
 
+    window.requestAnimationFrame(tick)
+}
 
+tick()
 
+```
 
 
 
