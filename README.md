@@ -67,5 +67,15 @@ Crie uma varfiavel SIZES tendo valores temporarios
  canvas é um elemento html que vc pode desenhar coisas
  
  WEBGLRENDEREE
+
+ a primeira vez que renderizar,
+ chama o render() e adiciona a cena e a camera
  
  
+### POSICIONAR ELEMENTOS
+
+#### Se posiciona com x, y e z
+
+
+
+## Lesson 04 - Webpack
