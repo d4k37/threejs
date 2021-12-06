@@ -106,6 +106,7 @@ window.addEventListener('mousemove', (event)=>
    
    ## OrbitControls
    - Da pra fazer os movimentos de um mapa, por exemplo, é mais sobre movimento de câmera
+   ```import  {OrbitControls}  from 'three/examples/jsm/controls/OrbitControls.js'```
    
    ## TrackballControlls
    - É como **OrbitControls** sem o limite de ângulo vertical
