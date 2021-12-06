@@ -49,3 +49,27 @@
   # Mover a camera com o mouse
   ## Primeiro precisamos saber as coordenadas do mouse no canvas
    - use o evento **mousemove** com **addEventListener** e pegue o **event.clientX** e o **event.clientY**
+
+ ```
+ // Cursor
+
+window.addEventListener('mousemove', (event)=>
+{
+    console.log(event.clientY);
+})
+```
+## Esses valores são em pixel e é melhor os ajustar, queremos um valor de amplitude 1 (**de 0 a 1**) que pode ser negativo e positivo
+```
+
+const cursor = {
+    x: 0,
+    y: 0
+}
+window.addEventListener('mousemove', (event)=>
+{
+    cursor.x = event.clientX / sizes.width - 0.5
+    cursor.y = event.clientY / sizes.height - 0.5
+
+    console.log(cursor.y);
+})
+```
