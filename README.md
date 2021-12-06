@@ -129,3 +129,36 @@ Você pode colocar objetos dentro de grupos e usar position, rotation e scale no
 
 
 # Lesson 6 - Animations
+
+## Animar em Three.js é como fazer stop motion
+ - Mova o objeto
+ - tire uma foto
+ - mova o objeto mais um pouco
+ - tire outra foto
+ - adinfinitum
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
