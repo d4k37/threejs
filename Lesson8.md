@@ -31,4 +31,22 @@ body{
 }
 ```
 
-### 
+### É preciso que quando o navegador seja redimensionado, a tela precisa acompanhar:
+```
+window.addEventListener('resize', ()=>{
+   sizes.width = window.innerWidth
+   sizes.height = window.innerHeight
+
+   //update camera
+   camera.aspect = sizes.width / sizes.height
+   camera.updateProjectionMatrix()
+
+   renderer.setSize(sizes.width, sizes.height)
+})
+```
+
+### Se você tiver trabalhando com um pixel ratio maior que 1 os cantos dos objetos podem ter um blurry effect
+### O pixel ratio corresponde a quantos pixels físicos você tem na tela pra uma unidade de pixel na parte do sortware
+#### ALguns anos atrás, todas as telas tinham um pixel ratio de 1 e se você chegasse bem perto, poderia ver os pixels
+#### Construtoras como a Apple viram uma oportunidade e começaram a construir telas com um pixel ratio de 2
+#### Agora, algumas construtoras estão fazendo pixel ratios até mesmo maiores como 3 e até mais,
