@@ -16,10 +16,18 @@ const sizes = {
     margin: 0;
     padding: 0;
 }
+
+html,
+body{
+    overflow: hidden;
+}
+
+
 .webgl{
     position: fixed;
     top: 0;
     left: 0;
+    outline: none;
 }
 ```
 
