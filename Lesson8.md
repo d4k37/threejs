@@ -53,3 +53,13 @@ window.addEventListener('resize', ()=>{
 #### Um pr de 2  significa 4 vezes mais pixels pra renderizar. Um pr de 3 significa 9 vezes mais pixels pra renderizar. Os maiores pr estão geralmente nos dispositivos mais fracos, celulares
 ![image](https://user-images.githubusercontent.com/59730229/145090941-da2fbeb8-447b-4a1f-a89d-aed8e09b2616.png)
 
+## Pra saber o pixel ratio, você pode usar window.devicePixelRatio
+### Pra atualizar o renderizador de forma correta, podemos usar renderer.setPixelRatio(...)
+### Também é preciso limitar o pixel ratio
+```
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+```
+
+
+
+
