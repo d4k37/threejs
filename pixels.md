@@ -16,13 +16,19 @@ Montadoras de telas como a Apple viram aí uma oportunidade e começaram a fazer
 
 Hoje existem telas com pixel ratios até maiores, que geralmente são as telas mobile (o que não faz sentido)
 
+Alguns smartphones tem o pixel ratio de 5, e pelo que vi pesquisando isso é puro marketing, e que se você olhar bem te perto na tela, nem vai conseguir ver os 25 pixels renderizados (no caso do pixel ratio de 5) dentro de 1 pixel físico. Dizem que um bom limite do pixel ratio é 2.
+
 Um pixel ratio de 2 significa 4 vezes mais pixels pra renderizar, e um pixel ratio de 3 quer dizer 9 vezes mais pixels pra renderizar.
 
 
 Por exemplo, em uma imagem renderizada em uma tela fictícia de apenas 100 pixels em um pixel ratio de 1, a sua GPU vai renderizar 100 pixels,  pois cada pixel real equivale a um pixel renderizado.
-Já uma mesma tela de 100 pixels, mas com um pixel ratio de 2, é como se cada pixel real fosse dividido ao meio, e agora a GPU pudesse renderizar 2 pixels no espaço físico de 1 pixel. Nesse caso será desenhado 200 pixels na tela.
+Já uma mesma tela de 100 pixels, mas com um pixel ratio de 2, é como se cada pixel real fosse dividido ao meio, e agora a GPU pudesse renderizar 2 pixels no espaço de 1 pixel físico. Nesse caso será desenhado 200 pixels na tela.
 
 Em teoria quanto maior o pixel ratio, mais suave será a aparência das linhas de um desenho, deixando pra trás esse 'efeito escada'
 
 
-Quando renderizando uma imagem no webgl através do threejs, fica claro que por padrão ela é renderizada com o pixel ratio de 1 já que sempre aparece esse 'efeito escada' nos objetos. Como renderizar uma imagem aproveitando todos os pixel ratio dos monitores:
+Quando renderizando uma imagem/objeto no webgl através do threejs, fica claro que por padrão ela é renderizada com o pixel ratio de 1 já que sempre aparece esse 'efeito escada' nos objetos. Como renderizar uma imagem aproveitando todo o pixel ratio do monitor em ThreeJS? R: Pegando o pixel ratio atual do monitor que a GPU está usando para renderizar (tela.devicePixelRatio) e atualizar o renderizador (renderer.setPixelRatio(...))
+
+```
+renderer.setPixelRatio(tela.devicePixelRatio)
+```
