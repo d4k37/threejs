@@ -40,6 +40,7 @@
 
 #### Existem duas formas de criar e usar, 
 ##### Especificar o comprimento e então preencher o array
+##### Assim podemos converter o **Float32Array** para um **BufferAttribute**
 ```
 const positionsArray = new Float32Array(
     0, 0, 0,
@@ -64,4 +65,24 @@ positionsArray[8] = 0
 ```
 ![image](https://user-images.githubusercontent.com/59730229/148075323-d0b55509-903b-4fc8-bc6c-68f32774dbc1.png)
 
-#### Assim podemos converter o **Float32Array** para um **BufferAttribute**
+### Agora é precisio adicionar o **bufferAttribute** ao **BufferGeometry** com setAttribute(...)
+```
+geometry.setAttribute('position', positionsAttribute)
+```
+
+#### Ou colocar vários 
+```
+const geometry = new THREE.BufferGeometry()
+const count = 50
+const positionsArray = new Float32Array(count * 3* 3)
+
+
+for(let i = 0; i < count * 3 * 3; i++){
+    positionsArray[i] = Math.random()
+}
+
+const positionsAttribute = new THREE.BufferAttribute(positionsArray, 3)
+geometry.setAttribute('position', positionsAttribute)
+```
+### Algumas geometrias tem faces que usam o mesmo vertice
+### Quando criando um **BufferGeometry** nós podemos identificar os vertices e índices para criar as faces e re-utilizar os vertices várias vezes
