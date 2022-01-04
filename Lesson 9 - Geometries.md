@@ -40,7 +40,7 @@
 
 #### Existem duas formas de criar e usar, 
 ##### Especificar o comprimento e então preencher o array
-``
+```
 const positionsArray = new Float32Array(
     0, 0, 0,
     0, 1, 0,
@@ -61,7 +61,7 @@ positionsArray[5] = 0
 positionsArray[6] = 0
 positionsArray[7] = 1
 positionsArray[8] = 0
-``
+```
 ![image](https://user-images.githubusercontent.com/59730229/148075323-d0b55509-903b-4fc8-bc6c-68f32774dbc1.png)
 
 #### Assim podemos converter o **Float32Array** para um **BufferAttribute**
