@@ -30,3 +30,38 @@
 ![image](https://user-images.githubusercontent.com/59730229/148067494-d2a9007b-66db-4aae-8c0d-85d56de9c08c.png)
 
 ##### Para mostrar as subdivisões use **wireframe: true** no **material**
+
+### Antes de criar a geometria, precisamos entender como salvar as informações do objeto
+#### Vamos usar **Float32Array**
+* Typed array
+* só usa floats
+* length fixa
+* facil para o computador lidar
+
+#### Existem duas formas de criar e usar, 
+##### Especificar o comprimento e então preencher o array
+``
+const positionsArray = new Float32Array(
+    0, 0, 0,
+    0, 1, 0,
+    1, 0, 0
+)
+const positionsAttribute = new THREE.BufferAttribute(positionsArray, 3)
+//primeiro vertice
+positionsArray[0] = 0
+positionsArray[1] = 0
+positionsArray[2] = 0
+
+//segundo vertice
+positionsArray[3] = 0
+positionsArray[4] = 1
+positionsArray[5] = 0
+
+//terceiro vertice
+positionsArray[6] = 0
+positionsArray[7] = 1
+positionsArray[8] = 0
+``
+![image](https://user-images.githubusercontent.com/59730229/148075323-d0b55509-903b-4fc8-bc6c-68f32774dbc1.png)
+
+#### Assim podemos converter o **Float32Array** para um **BufferAttribute**
