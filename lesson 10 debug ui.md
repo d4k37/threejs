@@ -40,6 +40,23 @@ gui.add(mesh.position, 'z', -3, 3, 0.01)
 
 ```
 gui.add(mesh.position, 'y').min(-3).max(3).step(0.01).name('nome do objeto, por exemplo')
+
+gui.add(mesh, 'visible')
+
+gui.add(material, 'wireframe')
 ```
 
 ## Você basicamente usa o gui.add pra adicionar propriedades de manipulação no painel ui do objeto que você escolhar
+
+
+## Para mudar a cor do objeto tem de Criar um objeto, apenas para ter um objeto e adicionar a ele os valores de cor
+## Mas para fazer isso ainda é preciso usar o método onCHange(...) pra saber quando o valor muda e material.color.set(...) pra atualizar a cor porque o material.color é uma instância de Color
+
+```
+
+const parameters = {
+    color = 0xff000
+}
+
+gui.addColor(parameters, 'color')
+```
