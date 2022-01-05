@@ -39,5 +39,7 @@ gui.add(mesh.position, 'z', -3, 3, 0.01)
 ### Também podemos usar **min(...)**, **max(...)**, e **step(...)
 
 ```
-gui.add(mesh.position, 'y').min(-3).max(3).step(0.01)
+gui.add(mesh.position, 'y').min(-3).max(3).step(0.01).name('nome do objeto, por exemplo')
 ```
+
+## Você basicamente usa o gui.add pra adicionar propriedades de manipulação no painel ui do objeto que você escolhar
