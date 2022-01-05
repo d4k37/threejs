@@ -58,5 +58,7 @@ const parameters = {
     color = 0xff000
 }
 
-gui.addColor(parameters, 'color')
+gui.addColor(parameters, 'color').onChange(()=>{
+    material.color.set(parameters.color)
+})
 ```
