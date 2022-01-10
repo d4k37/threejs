@@ -62,3 +62,31 @@ gui.addColor(parameters, 'color').onChange(()=>{
     material.color.set(parameters.color)
 })
 ```
+
+
+## Função spin
+
+### Para ativar uma função, é preciso salvar ela em um objeto. Nesse caso da pra usar o objeto 'parameters' de novo e criar o método spin nele:
+
+```
+const parameters = {
+    color: 0xff000,
+    spin:()=>{
+        gsap.to(mesh.rotation, {duration: 1, y: mesh.rotation.y +10})
+    }
+}
+gui.add(parameters, 'spin') 
+```
+
+
+# Dicas
+
+## Hide
+* Aperte H pra esconder o painel, se guiser esconder por padrão use **gui.hide()**
+
+## Close
+* É só clicar no final, e pra esconder por padrão use **closed:true**
+
+## Width
+* da pra mudar apenas clicando e arrastando, ou colocar o default width
+
