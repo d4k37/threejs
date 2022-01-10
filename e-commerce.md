@@ -32,3 +32,5 @@
 
 # O quanto o e-commerce vem crescendo e ainda vai crescer?
 ![image](https://user-images.githubusercontent.com/59730229/148798471-4d11e1e4-9bc5-454a-b75a-333262eae124.png)
+![image](https://user-images.githubusercontent.com/59730229/148798704-20d0e17a-df7d-4ddc-b3be-984b356867c7.png)
+
