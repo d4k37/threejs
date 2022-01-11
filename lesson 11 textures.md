@@ -111,5 +111,36 @@ colorTexture.center.y = 0.5
 
 ## A propriedade NearestFilter da uma boa para performance e framerate
 
-## Quando se usa magFilter e NearestFilter não é necessário usar Mipmaps, já que provavelmente você está usando uma textura com baixa resolução.
+## Quando se usa magFilter e NearestFilter não é necessário usar Mipmaps, já que provavelmente você está usando uma textura com baixa resolução. Com o mipmaps desativado você ganha performance
+```
+colorTexture.generateMipmaps = false
+```
+
+### Quando criar uma textura, é preciso dar atenção a 3 elementos cruciais.
+* o weight
+* o size (resolução)
+* o data
+
+
+# weight
+### Os usuarios precisam baixar as texturas. .jpg é mal comprimido mas é mais leve, .png é mais preciso mas normalmente mais pesado.
+### Existem sites de compressão como TinyPNG, os tamanhos das texturas podem ficar até 5 vezes menores.
+
+# size
+### Cada pixel das texturas precisam serem salvas na gpu não importa o peso da imagem, a GPU tem limitações de capacidade, é preciso gerenciar as texturas a serem salvas na gpu. (detalhe: quando usar mipmapping você está salvando o dobro de data na GPU
+### porque o mipmapping produz as texturas com o dobro de tamanho, é importante sempre usar uma textura com as dimensões múltiplas de 2
+* 512 x512
+* 1024x1024
+* 512x2048
+
+# data
+### Texturas suportam transparência, mas não em um arquivo .jpg, se quisermos ter apenas uma textura que combine cor e alpha, é melhor usar .png
+### Se estamos usando texturas normais, nós queremos os valores exatos dos pixels, e é por isso que não podemos usar uma compressão ruim e é melhor usar .png
+### Às vezes podemos combinar data diferentes em uma textura usando vermelho, verde, azul e alpha separadamente
+
+# considerações finais
+### É sempre difícil encontrar as texturas perfeitas, uma forma boa de começar é procurar na internet como nesses sites
+* poliigon.com
+* 3dtextures.me
+* arroway-textures.ch
 
