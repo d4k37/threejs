@@ -2,7 +2,14 @@ import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { Sphere, TextureLoader } from 'three'
+import * as dat from 'dat.gui'
 
+
+//debug
+
+const gui = new dat.GUI()
+gui.add(material, 'metalness').min(0).max(1).step(0.0001)
+gui.add(material, 'roughness').min(0).max(1).step(0.0001)
 
 // texturas
 
@@ -16,13 +23,20 @@ const normalColorTexture = textureLoader.load('/textures/door/normal.jpg')
 const metlanessColorTexture = textureLoader.load('/textures/door/metalness.jpg')
 const roughnessColorTexture = textureLoader.load('/textures/door/roughness.jpg')
 
-const matcapTexture = textureLoader.load('/textures/matcaps/1.png')
-const gradientTexture = textureLoader.load('/textures/gradients/3.png')
+const matcapTexture = textureLoader.load('/textures/matcaps/3.png')
+const gradientTexture = textureLoader.load('/textures/gradients/5.png')
+gradientTexture.minFilter = THREE.NearestFilter
+gradientTexture.magFilter = THREE.NearestFilter
+// gradientTexture.generateMipmaps = false
+
 
 /**
  * Base
  */
+// const material = new THREE.MeshMatcapMaterial()
+// material.matcap = matcapTexture
 // Canvas
+
 const canvas = document.querySelector('canvas.webgl')
 
 // Scene
@@ -40,8 +54,10 @@ const scene = new THREE.Scene()
 // const material = new THREE.MeshNormalMaterial()
 // material.flatShading = true
 
-const material = new THREE.MeshMatcapMaterial()
-material.matcap = matcapTexture
+// const material = new THREE.MeshMatcapMaterial()
+// material.matcap = matcapTexture
+
+const material = new THREE.MeshStandardMaterial()
 
 
 const bola = new THREE.Mesh(
