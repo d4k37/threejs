@@ -73,4 +73,23 @@ material.color = new THREE.Color('#EE0000')
 ## Vai mostrar uma cor usando os normals como referência pra pegar a cor certa em uma textura que se parece com uma esfera
 ## Ele vai pegar das cores que estão na textura, e colocar nas formas, vai pegar a cor certa de acordo com a posição da geometria em relação a câmera
 
+# MeshStandadMaterial
+## Usa um renderizador fisicamente baseado em princípios (PBR) 
+## Como o MeshLambertMaterial e MeshPhongMaterial, ele tem suporte a luzes mas com um algorítmo mais realista e melhores parâmetros como roughness e metalness
 
+
+```
+const material = new THREE.MeshStandardMaterial()
+```
+
+# Dat.Gui pra mudar as propriedades do material
+
+```
+gui.add(material, 'metalness').min(0).max(1).step)0.0001)
+gui.add(material, 'roughness').min(0).max(1).step)0.0001)
+```
+# aoMap
+## Pra mudar as propriedades da textura
+
+# Licença CCO
+## VOcê pode fazer o que quiser com o conteúdo deles sem precisar creditar os autores
